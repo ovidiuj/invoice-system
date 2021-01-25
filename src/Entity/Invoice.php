@@ -62,7 +62,6 @@ class Invoice
 
     public function __construct()
     {
-        $this->recipient = new ArrayCollection();
         $this->items = new ArrayCollection();
     }
 
@@ -71,10 +70,7 @@ class Invoice
         return $this->id;
     }
 
-    /**
-     * @return Collection|Recipient[]
-     */
-    public function getRecipient(): Collection
+    public function getRecipient(): Recipient
     {
         return $this->recipient;
     }

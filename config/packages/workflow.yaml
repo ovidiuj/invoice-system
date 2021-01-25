@@ -1,0 +1,23 @@
+framework:
+    workflows:
+        invoice_workflow:
+            type: 'workflow'
+            audit_trail:
+                enabled: true
+            marking_store:
+                type: 'method'
+                property: 'currentPlace'
+            supports:
+                - App\Entity\Invoice
+            initial_marking: created
+            places:
+                - created
+                - sent
+                - paid
+            transitions:
+                send:
+                    from: created
+                    to: sent
+                pay:
+                    from: sent
+                    to: paid
