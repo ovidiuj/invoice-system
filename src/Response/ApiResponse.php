@@ -76,7 +76,7 @@ class ApiResponse implements ApiResponseInterface
         if ($transfer instanceof ResponseTransferInterface) {
             $restResource = $this->resourceBuilder->createRestResource(
                 $type,
-                $transfer->getUuid() ?? null,
+                $transfer->getId() ?? null,
                 $transfer
             );
 

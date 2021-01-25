@@ -20,7 +20,9 @@ class ItemService extends AbstractService implements ItemServiceInterface
         $this->entityManager->flush();
 
         $itemResponseTransfer = new ItemResponseTransfer();
+        $itemResponseTransfer->setId($item->getId());
+        $itemResponseTransfer->setName($item->getName());
 
-        return $itemResponseTransfer->setName($item->getName());
+        return $itemResponseTransfer;
     }
 }
